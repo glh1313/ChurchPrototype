@@ -1,0 +1,142 @@
+.base {
+
+}
+
+.insurePageHeight {
+    height: 100%;
+}
+
+.pageContainer {
+    width: 1000px;
+}
+
+.mainBanner {
+    background-image: url("http://localhost:3000/Mountains.jpg");
+}
+
+.bannerOverlay {
+    width: 100%;
+    height: 165px;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.00);
+}
+
+.mainContainerSubPanel {
+    max-width: 1000px;
+    margin-top: 10px;
+}
+
+.centerContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.headerImage {
+    display: block;
+    background-color: transparent;
+}
+
+.largeHeader {
+    width: 694px;
+}
+
+.mainMenu {
+
+}
+
+.missionStatementContainer {
+    display: flex;
+    justify-content: space-between;
+    font-family: Georgia;
+    font-weight: 900;
+    font-size: medium;
+    /*margin-top: 5px;*/
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+
+.missionStatementSubLeft {
+    width: auto;
+    padding-left: 10px;
+}
+
+.missionStatementSub {
+    width: auto;
+}
+
+.missionStatementSubRight {
+    width: auto;
+    padding-right: 10px;
+}
+
+.eventImage {
+    width: 200px;
+}
+
+.eventRow {
+    margin-bottom: 5px;
+    background-color: rgba(0, 0, 0, 0.24);
+    padding: 4px;
+    color: white;
+}
+
+.eventLocationButton:active, .eventLocationButton:hover, .eventLocationButton:focus {
+    outline: 0;
+}
+
+.eventRowDescription {
+    margin-top: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.eventTitle {
+    color: red;
+    font-size: large;
+    margin-top: 4px;
+}
+
+.eventTitle:active, .eventLocationButton:hover, .eventLocationButton:focus {
+    outline: 0;
+}
+
+.eventDateTime {
+    font-size: small;
+    color: brown;
+}
+
+
+.mainMenuButton {
+    width: 100px;
+}
+
+.dropImages {
+    background-color: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+    height: 190px;
+    width: 190px;
+    padding: 5px;
+    margin: 3px;
+    color: white;
+}
+
+.editButtons {
+    border: hidden;
+}
+
+@media (max-width: 694px) {
+    .hideLgHeader {
+        display: none !important;
+    }
+}
+
+@media (min-width: 694px) {
+    .hideSmHeader {
+        display: none !important;
+    }
+}
+
+
+
