@@ -1,7 +1,16 @@
-import React from 'react';
-import BookLayout from './BookLayout';
-import EditBooks from './EditBooks';
-
+/**
+ * Sets up the /getsundayschoolclasses URL.
+ *
+ * @param {Object} app - the application object.
+ * @param {Object} config - the configuration object. This
+ *                          object may not be needed but is
+ *                          passed in for consistency.
+ *
+ * Note: The app is a single page app using react-router. This
+ *       route is just used to serve up the application if it
+ *       is requested from {url}/getsundayschoolclasses.
+ **/
+const path = require('path');
 const offeredClasses = [
     {
         title: "The Message of Colossians & Philemon",
@@ -28,44 +37,11 @@ const offeredClasses = [
     }
 ];
 
-class SundaySchoolTab extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            showModal: false
-        };
-
-        this.handleCloseButton = this.handleCloseButton.bind(this);
-        this.openModal = this.openModal.bind(this);
-    }
-
-    componentWillMount () {}
-
-    componentDidMount () {}
-
-    componentWillUnmount () {}
-
-    handleCloseButton () {
-        this.setState({
-            showModal: false
-        })
-    }
-
-    openModal () {
-        this.setState({
-            showModal: true
-        })
-    }
-
-    render () {
-        return (
-            <div>
-                {BookLayout(offeredClasses, this.props.activeEdit)}
-                <EditBooks showModal = {this.state.showModal} openModal = {this.handleCloseButton} closeModal = {this.handleCloseButton}/>
-            </div>
-        );
-    }
+function route(app, config) {
+    app.get('/getsundayschoolclasses', function (req, res) {
+        console.log('We have a request for getsundayschoolclasses.');
+        res.json(offeredClasses);
+    });
 }
 
-export default SundaySchoolTab;
+module.exports = route;

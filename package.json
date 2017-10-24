@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "async": "2.1.2",
+    "axios": "0.17.0",
     "babel-core": "*",
     "babel-loader": "*",
     "babel-plugin-transform-object-rest-spread": "*",
