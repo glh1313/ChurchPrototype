@@ -12,16 +12,16 @@ const fetchDataContainer = (dataDependsFn) => (Component) =>
             data: {}
         };
 
-        fetch (done, dependObject, key) {
-            let returnObject = {};
-            axios.get(dependObject[key]).then(response => {
-                returnObject[key] = response.data;
-                done(returnObject);
-            });
-        }
-
         componentDidMount() {
             const dependents = dataDependsFn(this.props);
+
+            const fetch = (done, dependObject, key) => {
+                let returnObject = {};
+                axios.get(dependObject[key]).then(response => {
+                    returnObject[key] = response.data;
+                    done(returnObject);
+                });
+            };
 
             const buildDataObject = (done, data) => {
                 let returnObject = {};
@@ -32,7 +32,6 @@ const fetchDataContainer = (dataDependsFn) => (Component) =>
                 done(returnObject);
             };
 
-            //
 
             const sendData = (done, data) => {
                 this.setState({
@@ -42,7 +41,7 @@ const fetchDataContainer = (dataDependsFn) => (Component) =>
             };
 
             ASQ(Object.keys(dependents))
-                .map((key, done) => this.fetch(done, dependents, key))
+                .map((key, done) => fetch(done, dependents, key))
                 .then(buildDataObject)
                 .then(sendData);
         }
