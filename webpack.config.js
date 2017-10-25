@@ -26,6 +26,9 @@ module.exports = {
                         "es2015",
                         "react",
                         "stage-2"
+                    ],
+                    plugins: [
+                        "babel-plugin-transform-decorators-legacy"
                     ]
                 }
             }
