@@ -1,7 +1,8 @@
 import React from 'react';
-import CenterInPage from '../components/CenterInPage';
 import { Panel } from 'react-bootstrap';
+import centerInDivContainer from '../containers/CenterInDivContainer';
 
+@centerInDivContainer
 class VisitingPage extends React.Component {
     constructor(props) {
         super(props);
@@ -20,18 +21,13 @@ class VisitingPage extends React.Component {
     handleMenuChange () {}
 
     render () {
-        console.log('We are going to render this page');
-        return mainMenuInstance(this);
+        return (
+            <div className="pageContainer">
+                <Panel header={ welcomeTitle } className="mainContainerSubPanel"></Panel>
+            </div>
+        );
     }
 }
-
-const mainMenuInstance = (props) => (
-    <CenterInPage>
-        <div className="pageContainer">
-            <Panel header={ welcomeTitle } className="mainContainerSubPanel"></Panel>
-        </div>
-    </CenterInPage>
-);
 
 const welcomeTitle = "Visiting";
 

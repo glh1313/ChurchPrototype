@@ -124,6 +124,11 @@
 
 .editButtons {
     border: hidden;
+    outline: none;
+}
+
+.minitriesNavBar {
+    margin: 5px 15px;
 }
 
 @media (max-width: 694px) {

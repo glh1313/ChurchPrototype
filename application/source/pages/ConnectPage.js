@@ -1,7 +1,8 @@
 import React from 'react';
-import CenterInPage from '../components/CenterInPage';
 import { Panel, Media, Glyphicon, Label } from 'react-bootstrap';
+import centerInDivContainer from '../containers/CenterInDivContainer';
 
+@centerInDivContainer
 class ConnectPage extends React.Component {
     constructor(props) {
         super(props);
@@ -19,76 +20,73 @@ class ConnectPage extends React.Component {
     handleMenuChange () {}
 
     render () {
-        return mainMenuInstance(this);
+        return (
+            <div className="pageContainer">
+                <Panel header={ welcomeTitle } className="mainContainerSubPanel">
+                    <h5>{text}</h5>
+                    <div>
+                        <Media>
+                            <Media.Body>
+                                <Media.Heading>To contact us:</Media.Heading>
+                                <Media>
+                                    <Media.Left>
+                                        <span style={mediaStyle}><Glyphicon glyph="envelope"/></span>
+                                    </Media.Left>
+                                    <Media.Body>
+                                        <Media.Heading>Mail</Media.Heading>
+                                        <Media.Body>
+                                            <div>Liberty Bay Presbyterian Church</div>
+                                            <div>P.O. Box 157</div>
+                                            <div>Poulsbo, WA 98370</div>
+                                        </Media.Body>
+                                    </Media.Body>
+                                </Media>
+                                <Media>
+                                    <Media.Left>
+                                        <span style={mediaStyle}><Glyphicon glyph="phone-alt"/></span>
+                                    </Media.Left>
+                                    <Media.Body>
+                                        <Media.Heading>Phone</Media.Heading>
+                                        <Media.Body>
+                                            <div>(360) 779-7545</div>
+                                        </Media.Body>
+                                    </Media.Body>
+                                </Media>
+                                <Media>
+                                    <Media.Left>
+                                        <span style={mediaStyle}><Glyphicon glyph="send"/></span>
+                                    </Media.Left>
+                                    <Media.Body>
+                                        <Media.Heading>Email</Media.Heading>
+                                        <Media.Body>
+                                            <div>libertybaypca@yahoo.com</div>
+                                        </Media.Body>
+                                    </Media.Body>
+                                </Media>
+                                <Media>
+                                    <Media.Left>
+                                        <span style={mediaStyle}><Glyphicon glyph="globe"/></span>
+                                    </Media.Left>
+                                    <Media.Body>
+                                        <Media.Heading>Location</Media.Heading>
+                                        <Media.Body>
+                                            <div>18561 9th Ave  NE</div>
+                                            <div>Poulsbo WA, 98370</div>
+                                        </Media.Body>
+                                    </Media.Body>
+                                </Media>
+                            </Media.Body>
+                            <Media.Right>
+                                <img width={251} height={192} src={connectImage}/>
+                            </Media.Right>
+                        </Media>
+                    </div>
+                </Panel>
+            </div>
+        );
     }
 }
 
-const mainMenuInstance = (props) => (
-    <CenterInPage>
-        <div className="pageContainer">
-            <Panel header={ welcomeTitle } className="mainContainerSubPanel">
-                <h5>{text}</h5>
-                <div>
-                    <Media>
-                        <Media.Body>
-                            <Media.Heading>To contact us:</Media.Heading>
-                            <Media>
-                                <Media.Left>
-                                    <span style={mediaStyle}><Glyphicon glyph="envelope"/></span>
-                                </Media.Left>
-                                <Media.Body>
-                                    <Media.Heading>Mail</Media.Heading>
-                                    <Media.Body>
-                                        <div>Liberty Bay Presbyterian Church</div>
-                                        <div>P.O. Box 157</div>
-                                        <div>Poulsbo, WA 98370</div>
-                                    </Media.Body>
-                                </Media.Body>
-                            </Media>
-                            <Media>
-                                <Media.Left>
-                                    <span style={mediaStyle}><Glyphicon glyph="phone-alt"/></span>
-                                </Media.Left>
-                                <Media.Body>
-                                    <Media.Heading>Phone</Media.Heading>
-                                    <Media.Body>
-                                        <div>(360) 779-7545</div>
-                                    </Media.Body>
-                                </Media.Body>
-                            </Media>
-                            <Media>
-                                <Media.Left>
-                                    <span style={mediaStyle}><Glyphicon glyph="send"/></span>
-                                </Media.Left>
-                                <Media.Body>
-                                    <Media.Heading>Email</Media.Heading>
-                                    <Media.Body>
-                                        <div>libertybaypca@yahoo.com</div>
-                                    </Media.Body>
-                                </Media.Body>
-                            </Media>
-                            <Media>
-                                <Media.Left>
-                                    <span style={mediaStyle}><Glyphicon glyph="globe"/></span>
-                                </Media.Left>
-                                <Media.Body>
-                                    <Media.Heading>Location</Media.Heading>
-                                    <Media.Body>
-                                        <div>18561 9th Ave  NE</div>
-                                        <div>Poulsbo WA, 98370</div>
-                                    </Media.Body>
-                                </Media.Body>
-                            </Media>
-                        </Media.Body>
-                        <Media.Right>
-                            <img width={251} height={192} src={connectImage}/>
-                        </Media.Right>
-                    </Media>
-                </div>
-            </Panel>
-        </div>
-    </CenterInPage>
-);
 const mediaStyle = {
     height: '100px',
     width: '100px'

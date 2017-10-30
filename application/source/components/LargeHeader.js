@@ -1,9 +1,10 @@
 import React from 'react';
 import MainMenu from './mainMenu';
-import CenterInPage from './CenterInPage';
 import MissionStatement from './MissionStatement';
 import { Image } from 'react-bootstrap';
+import centerInDivContainer from '../containers/CenterInDivContainer';
 
+@centerInDivContainer
 class LargeHeader extends React.Component {
     constructor(props) {
         super(props);
@@ -18,20 +19,16 @@ class LargeHeader extends React.Component {
     componentWillUnmount () {}
 
     render () {
-        return (mainMenuInstance(this.props))
+        return (
+            <div className="hideLgHeader">
+                <div className="largeHeader">
+                    <Image src="churchLogo.png" className="headerImage"/>
+                    <MissionStatement/>
+                    <MainMenu history={this.props.history}/>
+                </div>
+            </div>
+        );
     }
 }
-
-const mainMenuInstance = (props) => (
-    <div className="hideLgHeader">
-        <CenterInPage>
-            <div className="largeHeader">
-                <Image src="churchLogo.png" className="headerImage"/>
-                <MissionStatement/>
-                <MainMenu history={props.history}/>
-            </div>
-        </CenterInPage>
-    </div>
-);
 
 export default LargeHeader;

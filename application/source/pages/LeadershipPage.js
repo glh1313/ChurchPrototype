@@ -1,7 +1,8 @@
 import React from 'react';
-import CenterInPage from '../components/CenterInPage';
 import { Panel, Media } from 'react-bootstrap';
+import centerInDivContainer from '../containers/CenterInDivContainer';
 
+@centerInDivContainer
 class LeadershipPage extends React.Component {
     constructor(props) {
         super(props);
@@ -19,73 +20,69 @@ class LeadershipPage extends React.Component {
     handleMenuChange () {}
 
     render () {
-        return mainMenuInstance(this);
+        return (
+            <div className="pageContainer">
+                <Panel header={ welcomeTitleStaff } className="mainContainerSubPanel">
+                    <Media>
+                        <Media.Left>
+                            <img width={130} height={156} src={pastorImage}/>
+                        </Media.Left>
+                        <Media.Body>
+                            <Media.Heading>Andy Krasowski - Pastor</Media.Heading>
+                            <Media.Body>
+                                <p>{pastorText}</p>
+                            </Media.Body>
+                        </Media.Body>
+                    </Media>
+                    <Media>
+                        <Media.Left>
+                            <img width={130} height={156} src={assistantImage}/>
+                        </Media.Left>
+                        <Media.Body>
+                            <Media.Heading>Russ Tamm - Assistant to the pastor</Media.Heading>
+                            <Media.Body>
+                                <p>{assistantPastorText}</p>
+                            </Media.Body>
+                        </Media.Body>
+                    </Media>
+                </Panel>
+                <Panel header={ welcomeTitleOfficers } className="mainContainerSubPanel">
+                    <Media>
+                        <Media.Left>
+                            <img width={311} height={215} src={sessionMembersImage}/>
+                        </Media.Left>
+                        <Media.Body>
+                            <Media.Heading>The Session</Media.Heading>
+                            <Media.Body>
+                                <div>Mel Harless</div>
+                                <div>Andy Krasowski</div>
+                                <div>Jeff McGarvey</div>
+                                <div>Dave Stickney</div>
+                                <div>John Thomas</div>
+                            </Media.Body>
+                        </Media.Body>
+                    </Media>
+                    <Media>
+                        <Media.Left>
+                            <img width={315} height={214} src={diaconateImage}/>
+                        </Media.Left>
+                        <Media.Body>
+                            <Media.Heading>The Diaconate</Media.Heading>
+                            <Media.Body>
+                                <div>Brian Brandt</div>
+                                <div>Jay Ellis</div>
+                                <div>Bill Lockard</div>
+                                <div>Adam Mancus</div>
+                                <div>Chris Stricklin</div>
+                                <div>Rob Weiss</div>
+                            </Media.Body>
+                        </Media.Body>
+                    </Media>
+                </Panel>
+            </div>
+        );
     }
 }
-
-const mainMenuInstance = (props) => (
-    <CenterInPage>
-        <div className="pageContainer">
-            <Panel header={ welcomeTitleStaff } className="mainContainerSubPanel">
-                <Media>
-                    <Media.Left>
-                        <img width={130} height={156} src={pastorImage}/>
-                    </Media.Left>
-                    <Media.Body>
-                        <Media.Heading>Andy Krasowski - Pastor</Media.Heading>
-                        <Media.Body>
-                            <p>{pastorText}</p>
-                        </Media.Body>
-                    </Media.Body>
-                </Media>
-                <Media>
-                    <Media.Left>
-                        <img width={130} height={156} src={assistantImage}/>
-                    </Media.Left>
-                    <Media.Body>
-                        <Media.Heading>Russ Tamm - Assistant to the pastor</Media.Heading>
-                        <Media.Body>
-                            <p>{assistantPastorText}</p>
-                        </Media.Body>
-                    </Media.Body>
-                </Media>
-            </Panel>
-            <Panel header={ welcomeTitleOfficers } className="mainContainerSubPanel">
-                <Media>
-                    <Media.Left>
-                        <img width={311} height={215} src={sessionMembersImage}/>
-                    </Media.Left>
-                    <Media.Body>
-                        <Media.Heading>The Session</Media.Heading>
-                        <Media.Body>
-                            <div>Mel Harless</div>
-                            <div>Andy Krasowski</div>
-                            <div>Jeff McGarvey</div>
-                            <div>Dave Stickney</div>
-                            <div>John Thomas</div>
-                        </Media.Body>
-                    </Media.Body>
-                </Media>
-                <Media>
-                    <Media.Left>
-                        <img width={315} height={214} src={diaconateImage}/>
-                    </Media.Left>
-                    <Media.Body>
-                        <Media.Heading>The Diaconate</Media.Heading>
-                        <Media.Body>
-                            <div>Brian Brandt</div>
-                            <div>Jay Ellis</div>
-                            <div>Bill Lockard</div>
-                            <div>Adam Mancus</div>
-                            <div>Chris Stricklin</div>
-                            <div>Rob Weiss</div>
-                        </Media.Body>
-                    </Media.Body>
-                </Media>
-            </Panel>
-        </div>
-    </CenterInPage>
-);
 
 const pastorImage = "/Leadership/pastor.png";
 const assistantImage = "/Leadership/assistant.png";

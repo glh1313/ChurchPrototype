@@ -1,7 +1,8 @@
 import React from 'react';
 import DropZone from 'react-dropzone';
-import CenterInPage from '../../CenterInPage';
+import centerInDivContainer from '../../../containers/CenterInDivContainer';
 
+@centerInDivContainer
 class LoadBookImage extends React.Component {
     constructor(props) {
         super(props);
@@ -25,15 +26,13 @@ class LoadBookImage extends React.Component {
 
     render () {
         return (
-            <CenterInPage>
-                <DropZone accept="image/jpeg, image/png" onDrop={this.onDrop}>
-                    <div className="dropImages">
-                        <p>Click or drop image</p>
-                        <p>to select files to upload.</p>
-                        <p>Only images will be accepted</p>
-                    </div>
-                </DropZone>
-            </CenterInPage>
+            <DropZone accept="image/jpeg, image/png" onDrop={this.onDrop}>
+                <div className="dropImages">
+                    <p>Click or drop image</p>
+                    <p>to select files to upload.</p>
+                    <p>Only images will be accepted</p>
+                </div>
+            </DropZone>
         )
     }
 }

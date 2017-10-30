@@ -1,9 +1,10 @@
 import React from 'react';
-import CenterInPage from '../components/CenterInPage';
 import SundaySchoolTab from '../components/SundaySchoolTab';
 import MidWeekBibleStudyTab from "../components/MidWeekBibleStudyTab";
 import { Panel, Accordion, Navbar, Button, Glyphicon } from 'react-bootstrap';
+import centerInDivContainer from '../containers/CenterInDivContainer';
 
+@centerInDivContainer
 class MinistryPage extends React.Component {
     constructor(props) {
         super(props);
@@ -59,7 +60,7 @@ class MinistryPage extends React.Component {
 
         return (
             <Navbar fluid >
-                <Navbar.Header>
+                <Navbar.Header bsClass = "minitriesNavBar">
                     <Navbar.Text>{title}</Navbar.Text>
                     <Navbar.Toggle/>
                 </Navbar.Header>
@@ -70,18 +71,16 @@ class MinistryPage extends React.Component {
 
     render () {
         return (
-            <CenterInPage>
-                <div className="pageContainer">
-                    <Accordion activeKey = {this.state.key}>
-                        <Panel header={this.titleBar("Sunday School")} eventKey={1} onSelect = {this.handleSelect}><SundaySchoolTab activeEdit= {this.state.activeEdit}/></Panel>
-                        <Panel header="Bible Studies - Mid Week" eventKey={2} onSelect = {this.handleSelect}><MidWeekBibleStudyTab/></Panel>
-                        <Panel header="Together For God" eventKey={3} onSelect = {this.handleSelect}></Panel>
-                        <Panel header="Music and Choirs" eventKey={4} onSelect = {this.handleSelect}></Panel>
-                        <Panel header="Missions Committee" eventKey={5} onSelect = {this.handleSelect}></Panel>
-                        <Panel header="Trail Life USA & American Heritage Girls" eventKey={6} onSelect = {this.handleSelect}></Panel>
-                    </Accordion>
-                </div>
-            </CenterInPage>
+            <div className="pageContainer">
+                <Accordion activeKey = {this.state.key}>
+                    <Panel header={this.titleBar("Sunday School")} eventKey={1} onSelect = {this.handleSelect}><SundaySchoolTab activeEdit= {this.state.activeEdit}/></Panel>
+                    <Panel header="Bible Studies - Mid Week" eventKey={2} onSelect = {this.handleSelect}><MidWeekBibleStudyTab/></Panel>
+                    <Panel header="Together For God" eventKey={3} onSelect = {this.handleSelect}></Panel>
+                    <Panel header="Music and Choirs" eventKey={4} onSelect = {this.handleSelect}></Panel>
+                    <Panel header="Missions Committee" eventKey={5} onSelect = {this.handleSelect}></Panel>
+                    <Panel header="Trail Life USA & American Heritage Girls" eventKey={6} onSelect = {this.handleSelect}></Panel>
+                </Accordion>
+            </div>
         );
     }
 }

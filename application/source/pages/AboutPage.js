@@ -1,8 +1,9 @@
 import React from 'react';
-import CenterInPage from '../components/CenterInPage';
 import AboutLibertyBay from '../components/AboutLibertyBay';
 import WhatWeBelieve from '../components/WhatWeBelieve';
+import centerInDivContainer from '../containers/CenterInDivContainer';
 
+@centerInDivContainer
 class AboutPage extends React.Component {
     constructor(props) {
         super(props);
@@ -20,17 +21,13 @@ class AboutPage extends React.Component {
     handleMenuChange () {}
 
     render () {
-        return mainMenuInstance(this);
+        return (
+            <div className="pageContainer">
+                <AboutLibertyBay/>
+                <WhatWeBelieve/>
+            </div>
+        );
     }
 }
-
-const mainMenuInstance = (props) => (
-    <CenterInPage>
-        <div className="pageContainer">
-            <AboutLibertyBay/>
-            <WhatWeBelieve/>
-        </div>
-    </CenterInPage>
-);
 
 export default AboutPage;
