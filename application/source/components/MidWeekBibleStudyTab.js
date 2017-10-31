@@ -1,6 +1,6 @@
 import React from 'react';
 import BookLayout from './BookLayout';
-import fetchDataContainer from './FetchDataContainer';
+import fetchDataContainer from '../containers/FetchDataContainer';
 
 const dependents = (props) => ({
     bibleStudy: "/midweekbiblestudy"

@@ -1,7 +1,7 @@
 import React from 'react';
 import BookLayout from './BookLayout';
 import EditBooks from './EditBooks';
-import fetchDataContainer from './FetchDataContainer';
+import fetchDataContainer from '../containers/FetchDataContainer';
 
 const dependent = (props) => ({
    classes: '/getsundayschoolclasses'
