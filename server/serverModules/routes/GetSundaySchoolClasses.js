@@ -10,7 +10,7 @@
  *       route is just used to serve up the application if it
  *       is requested from {url}/getsundayschoolclasses.
  **/
-const path = require('path');
+
 const offeredClasses = [
     {
         title: "The Message of Colossians & Philemon",
